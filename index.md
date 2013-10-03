@@ -15,6 +15,8 @@ tour, scatter plot matrix, hexagons and tiles (color images), etc. Based on
 the support of several other packages, cranvas aims for speed (from Qt) and
 flexibility (from R), with the style and design borrowed from `ggplot2`.
 
+<iframe src="http://www.screenr.com/embed/9Le8" width="650" height="396" frameborder="0"></iframe>
+
 ## Brushing
 
 <iframe src="//player.vimeo.com/video/30173477" width="500" height="516" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
