@@ -17,7 +17,7 @@ group: navigation
   library(devtools)
   ## On Ubuntu or Mac, it takes a few minutes to install qtbase, but you do not need to reinstall it every time
   ## WINDOWS users, please do NOT run the next line!
-  install_github('qtbase', 'ggobi'); install_github('qtpaint', 'ggobi')
+  install_github('qtbase', 'ggobi', ref='qt4'); install_github('qtpaint', 'ggobi')
   
   install.packages(c('scales', 'tourr', 'objectSignals', 'objectProperties', 'plumbr','SearchTrees')) # install scales from CRAN
   pkgs <- list(hadley = c('productplots', 'densityvis'))
