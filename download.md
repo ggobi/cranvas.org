@@ -51,6 +51,32 @@ which will install all required packages, including current R versions.
 
 ## Install Qt under Mac OS X
 
+### Using Homebrew + Qt5
+
+First install Homebrew if you have not done so: <http://brew.sh/#install>. We did not test the OS X binary of R provided on CRAN, and you are recommended to remove the existing version of R and install R via homebrew instead (it will be much easier to maintain all your software packages in the future).
+
+Open a terminal and install R, cmake, and Qt5:
+
+```bash
+brew tap homebrew/science
+brew install r cmake qt5
+# make sure qmake is in PATH for the next step
+export PATH=$PATH:`brew --prefix qt5`/bin
+R
+```
+
+Now we have opened an R session, and we can install **qtbase** and **qtpaint** from Github (do not do this in RStudio; just stay in the terminal):
+
+```r
+library(devtools)
+install_github('ggobi/qtbase')
+install_github('ggobi/qtpaint')
+```
+
+The hardest part is done, and we can install **cranvas** with its dependencies now.
+
+### Manual installation (Qt 4.8)
+
 1. Make sure that you have a recent version of xcode installed.
 2. Install Qt (version 4.8) from [http://qt-project.org/downloads](http://qt-project.org/downloads).
 3. Install cmake (version 2.8.1 or later); obtain it from [cmake.org](cmake.org).
