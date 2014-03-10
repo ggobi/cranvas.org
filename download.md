@@ -18,7 +18,7 @@ group: navigation
   ## On Ubuntu or Mac, it takes a few minutes to install qtbase, but you do not need to reinstall it every time
   ## WINDOWS users, please do NOT run the next line!
   install_github('qtbase', 'ggobi', ref='qt4'); install_github('qtpaint', 'ggobi')
-  
+
   install.packages(c('scales', 'tourr', 'objectSignals', 'objectProperties', 'plumbr','SearchTrees')) # install scales from CRAN
   pkgs <- list(hadley = c('productplots', 'densityvis'))
   for (repo in names(pkgs)) {
@@ -37,7 +37,7 @@ group: navigation
 (Optional but recommended) Add the CRAN Ubuntu repository to your `/etc/apt/sources.list` file as per the [instructions on CRAN](http://cran.r-project.org/bin/linux/ubuntu/).
 
 Then run
-       
+
 ```
 sudo apt-get update
 sudo apt-get install libqt4-dev qt4-qmake cmake r-base-dev libcurl4-gnutls-dev
@@ -52,8 +52,8 @@ which will install all required packages, including current R versions.
 ## Install Qt under Mac OS X
 
 1. Make sure that you have a recent version of xcode installed.
-2. Install Qt (version 4.8) from [http://qt-project.org/downloads](http://qt-project.org/downloads). 
-3. Install cmake (version 2.8.1 or later); obtain it from [cmake.org](cmake.org). 
+2. Install Qt (version 4.8) from [http://qt-project.org/downloads](http://qt-project.org/downloads).
+3. Install cmake (version 2.8.1 or later); obtain it from [cmake.org](cmake.org).
 4. Check your PATH, ensuring that both are visible.
 5. Install the dependent packages by the R code above.
 6. If you get errors like "smokedata.cpp:6646: error: ‘QDBusServer’ was not declared in this scope" switch to RStudio and build from there. It works! Using R (Good Sport) and the latest RStudio version 0.97.449.
@@ -72,7 +72,7 @@ which will install all required packages, including current R versions.
   ...\Rtools\bin;
   ...\Rtools\gcc-4.6.3\bin;
   ```
-  For 32-bit Windows, add `...\R\bin\i386` to PATH. 
+  For 32-bit Windows, add `...\R\bin\i386` to PATH.
   For 64-bit Windows, add `...\R\bin\x64`.
 
 2.	Install [cmake](http://www.cmake.org) 2.8.11 from [http://www.cmake.org/files/v2.8/cmake-2.8.11-win32-x86.exe](http://www.cmake.org/files/v2.8/cmake-2.8.11-win32-x86.exe). Add `...\CMake 2.8\bin` to the PATH.
@@ -80,15 +80,15 @@ which will install all required packages, including current R versions.
 3.	Download and install Qt.
 
   * For 32-bit Windows, download the installer from [here](http://download.qt-project.org/official_releases/qt/4.8/4.8.4/qt-win-opensource-4.8.4-mingw.exe), and run the installation. Then add `...\Qt\4.8.4\bin` to your PATH.
-  
+
   * For 64-bit Windows, the approach is a little complicated.
-  
-    1. Download MinGW from [http://sourceforge.net/projects/mingwbuilds](http://sourceforge.net/projects/mingwbuilds/). Install it with settings: 
-      Version - 4.8.1; 
-      Architecture - x64; 
-      Threads - posix; 
-      Exception - sjlj; 
-      Build revision - rev5.	      
+
+    1. Download MinGW from [http://sourceforge.net/projects/mingwbuilds](http://sourceforge.net/projects/mingwbuilds/). Install it with settings:
+      Version - 4.8.1;
+      Architecture - x64;
+      Threads - posix;
+      Exception - sjlj;
+      Build revision - rev5.
       Then add it to PATH. (For example, `...\MinGW\bin`) NOTE: No spaces are allowed in the directory.
 
     2.	Install Perl and add its bin to the PATH.
@@ -113,10 +113,10 @@ which will install all required packages, including current R versions.
 
 1.	Install Perl and add its bin to the PATH.
 
-2.	Create the `CMAKE` environment variable to point to your `cmake.exe`. 
+2.	Create the `CMAKE` environment variable to point to your `cmake.exe`.
 	(for example, `...\CMake 2.8\bin\cmake.exe`)
 
-3.	Create `QMAKE` environment variable to point to `qmake.exe`. 
+3.	Create `QMAKE` environment variable to point to `qmake.exe`.
 	(for example, `...\Qt\4.8.4\bin\qmake.exe`)
 
 4.	Create `RC_COMPILER` environment variable to point to `windres.exe` from Rtools. Make sure to change the backslash(`\`) to slash(`/`) here.
@@ -138,19 +138,19 @@ which will install all required packages, including current R versions.
   C:\Program Files\CMake 2.8\bin;
   [... other directories ...]
   ```
-  
+
 7.	Download [qtbase](https://github.com/ggobi/qtbase/archive/master.zip) and unzip it. It does not matter where you unzip it. Change the folder name from "qtbase-master" to "qtbase".
 
 8.	(This should be fixed in code) Check `.../qtbase/src/mkdef.sh`.
 	Change `sed -n $1 tmp >> qtbase.def` to
-  
+
 	  - Windows 32: `sed -n 's/^.* [BCDRT] _/ /p' tmp >> qtbase.def`
     - Windows 64: `sed -n 's/^.* [BCDRT] / /p' tmp >> qtbase.def`
 
 9.	Make a copy of the whole qtbase folder. Put it in another directory, or just rename it.
 	Don't delete this clean copy until you successfully install qtbase after step 10.
 
-10.	Start the command shell, go to the directory containing qtbase (i.e., the parent directory of qtbase). Run: 
+10.	Start the command shell, go to the directory containing qtbase (i.e., the parent directory of qtbase). Run:
   ```
   R CMD INSTALL --build qtbase
   ```
@@ -163,7 +163,7 @@ which will install all required packages, including current R versions.
 
 1.	Add the `...\qtbase\local\lib` to PATH.
 	where ... is replaced by your R library path. Run `?.libPaths` in R to find out it.
-	
+
 2.	Download glext.h from [http://www.opengl.org/registry/api/glext.h](http://www.opengl.org/registry/api/glext.h).
 	And copy it to `...\Qt\4.8.4\src\opengl\`.
 	Add a line to `...\Qt\4.8.4\include\QtOpenGL\qgl.h` :
@@ -178,7 +178,7 @@ which will install all required packages, including current R versions.
   ```
 
 3.	Download [qtpaint](https://github.com/ggobi/qtpaint)
-	Start the command shell, go to the directory containing qtpaint. Run: 
+	Start the command shell, go to the directory containing qtpaint. Run:
   ```
   R CMD INSTALL --build qtpaint
   ```
