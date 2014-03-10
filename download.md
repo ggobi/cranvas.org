@@ -38,10 +38,10 @@ group: navigation
 
 Then run
 
-```
+{% highlight bash %}
 sudo apt-get update
 sudo apt-get install libqt4-dev qt4-qmake cmake r-base-dev libcurl4-gnutls-dev
-```
+{% endhighlight %}
 
 which will install all required packages, including current R versions.
 
@@ -57,21 +57,21 @@ First install Homebrew if you have not done so: <http://brew.sh/#install>. We di
 
 Open a terminal and install R, cmake, and Qt5:
 
-```bash
+{% highlight bash %}
 brew tap homebrew/science
 brew install r cmake qt5
 # make sure qmake is in PATH for the next step
 export PATH=$PATH:`brew --prefix qt5`/bin
 R
-```
+{% endhighlight %}
 
 Now we have opened an R session, and we can install **qtbase** and **qtpaint** from Github (do not do this in RStudio; just stay in the terminal):
 
-```r
+{% highlight r %}
 library(devtools)
 install_github('ggobi/qtbase')
 install_github('ggobi/qtpaint')
-```
+{% endhighlight %}
 
 The hardest part is done, and we can install **cranvas** with its dependencies now.
 
