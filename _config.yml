@@ -13,9 +13,9 @@ markdown: kramdown
 title : cranvas
 tagline: Interactive Statistical Graphics with R and Qt
 author :
-  name : Yihui Xie
-  email : xie@yihui.name
-  github : yihui
+  name : The cranvas Development Team
+  email : cranvas@googlegroups.com
+  github : ggobi
   twitter : xieyihui
 
 # The production_url is only used when full-domain names are needed
