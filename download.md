@@ -27,15 +27,13 @@ group: navigation
 
 
 
-
-
 ## Install Qt under Ubuntu
 
 (Optional but recommended) Add the CRAN Ubuntu repository to your `/etc/apt/sources.list` file as per the [instructions on CRAN](http://cran.r-project.org/bin/linux/ubuntu/).
 
-Then run
-
 {% highlight bash %}
+sudo apt-add-repository -y "deb http://cran.rstudio.com/bin/linux/ubuntu `lsb_release -cs`/"
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 sudo apt-get update
 sudo apt-get install libqt4-dev qt4-qmake cmake r-base-dev libcurl4-gnutls-dev
 {% endhighlight %}
