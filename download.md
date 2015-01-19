@@ -17,15 +17,12 @@ group: navigation
   library(devtools)
   ## On Ubuntu or Mac, it takes a few minutes to install qtbase, but you do not need to reinstall it every time
   ## WINDOWS users, please do NOT run the next line!
-  install_github('qtbase', 'ggobi', ref='qt4'); install_github('qtpaint', 'ggobi')
+  install_github('ggobi/qtbase@qt4'); install_github('ggobi/qtpaint')
 
-  install.packages(c('scales', 'tourr', 'objectSignals', 'objectProperties', 'plumbr','SearchTrees')) # install scales from CRAN
-  pkgs <- list(hadley = c('productplots', 'densityvis'))
-  for (repo in names(pkgs)) {
-    for (pkg in pkgs[[repo]]) install_github(pkg, repo)
-  }
+  install.packages(c('scales', 'tourr', 'objectSignals', 'objectProperties', 'plumbr', 'SearchTrees'))
+  install_github(c('hadley/productplots', 'hadley/densityvis'))
   ## and finally cranvas:
-  install_github('cranvas', 'ggobi', args="--no-multiarch")
+  install_github('ggobi/cranvas', args = "--no-multiarch")
   {% endhighlight %}
 
 
@@ -69,8 +66,7 @@ Now we have opened an R session, and we can install **qtbase** and **qtpaint** f
 
 {% highlight r %}
 library(devtools)
-install_github('ggobi/qtbase')
-install_github('ggobi/qtpaint')
+install_github(c('ggobi/qtbase', 'ggobi/qtpaint'))
 {% endhighlight %}
 
 The hardest part is done, and we can install **cranvas** with its dependencies now.
