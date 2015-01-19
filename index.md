@@ -19,10 +19,9 @@ Below is a quick introduction to some common interactions in `cranvas`:
 
 <iframe src="http://www.screenr.com/embed/9Le8" width="650" height="396" frameborder="0"></iframe>
 
-## Installation
-
-For now, refer to the [cranvas wiki](https://github.com/ggobi/cranvas/wiki)
-for instructions.
+If you have any questions or comments, please post to the mailing list
+[cranvas@googlegroups.com](https://groups.google.com/group/cranvas) or
+[Github repo](https://github.com/ggobi/cranvas).
 
 ## Latest Posts
 
